@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/Inheritance/MultilevelInheritance.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/Inheritance/MultilevelInheritance.java" />
+              <option name="updatedContent" value="package Inheritance;&#10;&#10;/*&#10; * ============================================================&#10; * 2) MULTILEVEL INHERITANCE  (a chain: A -&gt; B -&gt; C)&#10; * ============================================================&#10; * A class can inherit from a class that itself inherits from another.&#10; * This is still SINGLE inheritance at each level - and it IS allowed.&#10; *&#10; *   LivingThing  -&gt;  Creature  -&gt;  Cat&#10; */&#10;&#10;class LivingThing {&#10;    void breathe() {&#10;        System.out.println(&quot;Breathing...&quot;);&#10;    }&#10;}&#10;&#10;class Creature extends LivingThing {&#10;    void move() {&#10;        System.out.println(&quot;Moving...&quot;);&#10;    }&#10;}&#10;&#10;class Cat extends Creature {&#10;    void meow() {&#10;        System.out.println(&quot;Meow!&quot;);&#10;    }&#10;}&#10;&#10;public class MultilevelInheritance {&#10;    public static void main(String[] args) {&#10;        Cat c = new Cat();&#10;        c.breathe(); // from LivingThing  (grandparent)&#10;        c.move();    // from Creature     (parent)&#10;        c.meow();    // from Cat          (itself)&#10;    }&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/Inheritance/SingleInheritance.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/Inheritance/SingleInheritance.java" />
+              <option name="updatedContent" value="package Inheritance;&#10;&#10;/*&#10; * ============================================================&#10; * 1) SINGLE INHERITANCE  (one child extends one parent)&#10; * ============================================================&#10; * Java supports SINGLE class inheritance using the &quot;extends&quot; keyword.&#10; * A subclass inherits fields and methods from its superclass.&#10; */&#10;&#10;// Parent / Super class&#10;class Animal {&#10;    String name;&#10;&#10;    Animal(String name) {&#10;        this.name = name;&#10;    }&#10;&#10;    void eat() {&#10;        System.out.println(name + &quot; is eating.&quot;);&#10;    }&#10;&#10;    void sleep() {&#10;        System.out.println(name + &quot; is sleeping.&quot;);&#10;    }&#10;}&#10;&#10;// Child / Sub class -&gt; inherits from Animal&#10;class Dog extends Animal {&#10;&#10;    Dog(String name) {&#10;        super(name); // call parent constructor&#10;    }&#10;&#10;    // Dog-specific behaviour&#10;    void bark() {&#10;        System.out.println(name + &quot; says: Woof!&quot;);&#10;    }&#10;}&#10;&#10;public class SingleInheritance {&#10;    public static void main(String[] args) {&#10;        Dog d = new Dog(&quot;Rex&quot;);&#10;        d.eat();   // inherited from Animal&#10;        d.sleep(); // inherited from Animal&#10;        d.bark();  // defined in Dog&#10;    }&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/Inheritance/WhyNoMultipleClassInheritance.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/Inheritance/WhyNoMultipleClassInheritance.java" />
+              <option name="updatedContent" value="package Inheritance;&#10;&#10;/*&#10; * ============================================================&#10; * 3) WHY JAVA DOES NOT ALLOW MULTIPLE *CLASS* INHERITANCE&#10; * ============================================================&#10; *&#10; * The DIAMOND PROBLEM:&#10; *&#10; *            A (method greet())&#10; *           / \&#10; *          B   C   (both override greet())&#10; *           \ /&#10; *            D      &lt;-- if D could extend B AND C,&#10; *                       which greet() should it use? AMBIGUOUS!&#10; *&#10; * To avoid this confusion, Java FORBIDS a class extending more than one class.&#10; *&#10; *   class D extends B, C { }   // &lt;-- COMPILE ERROR, not allowed in Java&#10; *&#10; * Other languages like C++ allow it but must add extra rules to resolve&#10; * the ambiguity. Java keeps things simple by disallowing it for classes.&#10; *&#10; * SOLUTION in Java: use INTERFACES (see MultipleInheritanceWithInterfaces.java)&#10; */&#10;&#10;public class WhyNoMultipleClassInheritance {&#10;    public static void main(String[] args) {&#10;        System.out.println(&quot;A Java class can extend ONLY ONE class.&quot;);&#10;        System.out.println(&quot;Use interfaces to gain 'multiple inheritance' of type.&quot;);&#10;    }&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

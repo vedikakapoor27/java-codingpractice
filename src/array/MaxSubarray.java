@@ -1,0 +1,29 @@
+package array;
+
+    public class MaxSubarray {
+
+        public static int maxSubArray(int[] nums) {
+
+            // Start with first element
+            int currentSum = nums[0];
+            int maxSum = nums[0];
+
+            // Loop from second element
+            for (int i = 1; i < nums.length; i++) {
+
+                // Either start fresh or continue adding
+                currentSum = Math.max(nums[i], currentSum + nums[i]);
+
+                // Update max sum if needed
+                maxSum = Math.max(maxSum, currentSum);
+            }
+
+            return maxSum;
+        }
+
+        public static void main(String[] args) {
+            int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+            System.out.println(maxSubArray(nums));
+        }
+    }
+
